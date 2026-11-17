@@ -1,0 +1,15 @@
+{% extends "ideas/base.html" %}
+{% block title %}Опубликованные идеи{% endblock %}
+{% block content %}
+<h1>Опубликованные идеи</h1>
+{% for idea in ideas %}
+  <div class="card">
+    <h3>{{ idea.idea_brief }}</h3>
+    <p><strong>Проблема:</strong> {{ idea.problem }}</p>
+    <p><strong>Целевая аудитория:</strong> {{ idea.audience }}</p>
+    <p><strong>Курс:</strong> {{ idea.course }} &nbsp; <strong>Направление:</strong> {{ idea.direction }}</p>
+  </div>
+{% empty %}
+  <div class="card"><p>Пока опубликованных заявок нет.</p></div>
+{% endfor %}
+{% endblock %}
